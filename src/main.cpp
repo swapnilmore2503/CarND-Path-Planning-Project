@@ -306,7 +306,7 @@ int main() {
             }
 
             // Behavior : Let's see what to do.
-            double speed_diff = 0;
+            double red_speed = 0;
             const double speed_l = 49.5;
             const double a_limit = .224;
             if ( front_car ) { // Car ahead
@@ -320,7 +320,7 @@ int main() {
 
               } else {
 
-                speed_diff -= a_limit;
+                red_speed -= a_limit;
 
               }
             } else {
@@ -333,7 +333,7 @@ int main() {
               }
               if ( ref_vel < speed_l ) {
 
-                speed_diff += a_limit;
+                red_speed += a_limit;
 
               }
             }
@@ -416,7 +416,7 @@ int main() {
 
             for( int i = 1; i < 50 - prev_size; i++ ) {
 
-              ref_vel += speed_diff;
+              ref_vel += red_speed;
 
               if ( ref_vel > speed_l ) {
 
